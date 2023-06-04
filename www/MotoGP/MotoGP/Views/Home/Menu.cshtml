@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+    ViewData["Title"] = "Menu";
+    int bannerNumber = (int)ViewData["BannerNr"];
+    string imagePath = $"/images/banners/banner{bannerNumber}.jpg";
+}
+
+<style>
+    .banner {
+        width: 100%;
+    }
+
+    .image-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        justify-items: center;
+        align-items: center;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-top: 75px;
+    }
+
+    .image-link {
+        flex: 1 0 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+</style>
+
+<img class="banner" src="@imagePath" alt="Banner">
+
+<div class="image-links">
+    <div class="image-link">
+        <a asp-controller="Info" asp-action="ListRaces">
+            <img src="~/images/banners/races.png" />
+        </a>
+    </div>
+
+    <div class="image-link">
+        <a asp-controller="Info" asp-action="ListTeams">
+            <img src="~/images/banners/teams.png" />
+        </a>
+    </div>
+
+    <div class="image-link">
+        <a asp-controller="Info" asp-action="ListRiders">
+            <img src="~/images/banners/riders.png" />
+        </a>
+    </div>
+
+    <div class="image-link">
+        <a asp-controller="Shop" asp-action="OrderTicket">
+            <img src="~/images/banners/tickets.png" />
+        </a>
+    </div>
+</div>

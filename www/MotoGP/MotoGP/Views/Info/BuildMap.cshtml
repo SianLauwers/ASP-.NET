@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Races on map";
+}
+
+<img src="~/images/banners/map.png" usemap="#workmap" />
+
+<map name="workmap">
+    @foreach (var race in (List<Race>)ViewData["Races"])
+    {
+        <area shape="circle" coords="@race.X, @race.Y, 15" alt="@race.Name" href="@Url.Action("ShowRace", "Info", new { id = race.RaceID})">
+    }
+</map>
+
+<a asp-controller="Home" asp-action="ListRaces">Back</a>
