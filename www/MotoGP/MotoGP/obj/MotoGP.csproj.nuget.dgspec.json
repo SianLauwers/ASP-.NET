@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MotoGP\\MotoGP\\MotoGP.csproj": {}
+    "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MotoGP\\MotoGP\\MotoGP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MotoGP\\MotoGP\\MotoGP.csproj": {
+    "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MotoGP\\MotoGP\\MotoGP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MotoGP\\MotoGP\\MotoGP.csproj",
+        "projectUniqueName": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MotoGP\\MotoGP\\MotoGP.csproj",
         "projectName": "MotoGP",
-        "projectPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MotoGP\\MotoGP\\MotoGP.csproj",
+        "projectPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MotoGP\\MotoGP\\MotoGP.csproj",
         "packagesPath": "C:\\Users\\sian-\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MotoGP\\MotoGP\\obj\\",
+        "outputPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MotoGP\\MotoGP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sian-\\AppData\\Roaming\\NuGet\\NuGet.Config",
