@@ -2459,11 +2459,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MvcMovie\\MvcMovie\\MvcMovie.csproj",
+      "projectUniqueName": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MvcMovie\\MvcMovie\\MvcMovie.csproj",
       "projectName": "MvcMovie",
-      "projectPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MvcMovie\\MvcMovie\\MvcMovie.csproj",
+      "projectPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MvcMovie\\MvcMovie\\MvcMovie.csproj",
       "packagesPath": "C:\\Users\\sian-\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\www\\MvcMovie\\MvcMovie\\obj\\",
+      "outputPath": "C:\\Users\\sian-\\OneDrive\\Documenten\\2022-2023\\ASP .NET Sian Lauwers\\ASP-.NET\\www\\MvcMovie\\MvcMovie\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sian-\\AppData\\Roaming\\NuGet\\NuGet.Config",
