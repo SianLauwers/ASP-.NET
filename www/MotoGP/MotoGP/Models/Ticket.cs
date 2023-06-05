@@ -6,15 +6,14 @@
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        // FK Country
         public int CountryID { get; set; }
-        // FK Race
+        public Country Country { get; set; }
         public int RaceID { get; set; }
+        public Race Race { get; set; }
         public int Number { get; set; }
-        public DateTime OrderDate { get; set; }
-        public bool Paid { get; set; }
 
-        public ICollection<Rider> Riders { get; set; }
-        public ICollection<Race> Races { get; set; }
+        public DateTime OrderDate { get; set; }
+
+        public Boolean Paid { get; set; }
     }
 }

@@ -5,11 +5,11 @@
         public int RiderID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        // FK Country
-        public int CountryID { get; set; }
-        // FK Team
         public int TeamID { get; set; }
-        public string Bike { get; set; }
+        public Team Team { get; set; }
+        public int CountryID { get; set; }
+        public Country Country { get; set; }
         public int Number { get; set; }
+        public string Bike { get; set; }
     }
 }

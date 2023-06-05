@@ -1,8 +1,13 @@
-﻿@{
+﻿@model MotoGP.Models.Ticket
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Confirmation";
 }
 
-<p>Thank you for ordering tickets for the race. Your booking is registered on <b>@DateTime.Now.ToString("dd/MM/yyyy")</b>. We will send the tickets as soon as possible.</p>
+<p>
+    Thank you <b>@Model.Name</b> for ordering tickets for the race in <b>@Model.Race.Name</b> on
+    <b>@Model.Race.Date.ToString("dd/MM/yyyy").</b>
+    Your booking is registered on <b>@Model.OrderDate.ToString("dd/MM/yyyy")</b>. We will send the <b>@Model.Number</b>) ticket(s) as soon as possible.
+</p>
 
 <a asp-controller="Home" asp-action="Menu">Back</a>

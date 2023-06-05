@@ -36,7 +36,7 @@ namespace MvcMovie.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(rating);
+                _context.Add(rating);   
                 _context.SaveChanges();
                 return RedirectToAction("List");
             }
