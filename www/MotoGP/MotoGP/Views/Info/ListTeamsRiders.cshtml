@@ -1,0 +1,69 @@
+﻿@*@model IEnumerable<MotoGP.Models.Team>*@
+@model MotoGP.Models.ViewModel.ListTeamsRidersViewModel
+
+@{
+    Layout = "~/views/shared/_Layout.cshtml";
+    ViewData["Title"] = "Teams & Riders";
+    @*var riders = (IEnumerable<Rider>)ViewData["Riders"];*@
+    var jpg = ".jpg";
+    var png = ".png";
+}
+
+
+<style>
+    .card {
+        background-color: #eee;
+        margin: 5px;
+        padding: 5px;
+        flex-direction: column;
+        flex: 0 0 20%;
+    }
+
+    div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    * {
+        padding: 2px;
+        margin: 3px;
+    }
+
+    .card-img {
+        margin: auto;
+        margin-left: 0px;
+    }
+
+    .card-body {
+        font-size: 28px;
+    }
+
+    .card-footer {
+        color: dimgrey;
+    }
+</style>
+<div>
+    @foreach (var team in Model.teams)
+    {
+        <div style="background-color: lightgrey">
+            <a asp-controller="Info" asp-action="ListTeamsRiders" asp-route-TeamID="@team.TeamID"><img src="~/images/teams/@team.Logo " alt="Alternate text" /></a>
+        </div>
+    }
+    <div>
+        @foreach (var rider in Model.riders)
+        {
+            <div class="card">
+                <img src="~/images/riders/@rider.Number@jpg" alt="Alternate text" />
+                <div>
+                    <img class="card-img" src="~/images/flags/@rider.CountryID@png" alt="Alternate text" />
+                    <p class="card-body">@rider.Number</p>
+                </div>
+
+                <p class="card-footer">@rider.FirstName @rider.LastName</p>
+            </div>
+
+        }
+    </div>
+    <br />
+</div>
+<a asp-controller="Info" asp-action="ListTeams">back</a>

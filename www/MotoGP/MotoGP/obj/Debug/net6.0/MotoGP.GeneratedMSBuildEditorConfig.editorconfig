@@ -44,6 +44,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xMaXN0UmlkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Info/ListTeams.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xMaXN0VGVhbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Info/ListTeamsRiders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xMaXN0VGVhbXNSaWRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Info/SelectRace.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xTZWxlY3RSYWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Info/ShowRace.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xTaG93UmFjZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -66,6 +78,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Shop/ConfirmOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDb25maXJtT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Shop/EditTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxFZGl0VGlja2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Shop/ListTickets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxMaXN0VGlja2V0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sian-/OneDrive/Documenten/2022-2023/ASP .NET Sian Lauwers/ASP-.NET/www/MotoGP/MotoGP/Views/Shop/OrderTicket.cshtml]

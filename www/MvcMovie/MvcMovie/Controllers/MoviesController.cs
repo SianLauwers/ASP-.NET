@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
+using MvcMovie.Models.ViewModels;
 
 namespace MvcMovie.Controllers
 {
@@ -14,12 +15,27 @@ namespace MvcMovie.Controllers
             _context = context;
         }
 
-        public IActionResult List()
+        public IActionResult List(int ratingID = 0)
         {
-            var movies = _context.Movies.OrderBy(m => m.Title);
+            var listMoviesVM = new ListMoviesViewModel();
 
-            return View(movies.ToList());
+            if (ratingID != 0)
+            {
+                listMoviesVM.Movies = _context.Movies.Where(m => m.RatingID == ratingID).OrderBy(m => m.Title).ToList();
+            }
+            else
+            {
+                listMoviesVM.Movies = _context.Movies.OrderBy(m => m.Title).ToList();
+            }
+
+            listMoviesVM.Ratings =
+                new SelectList(_context.Ratings.OrderBy(r => r.Name),
+                                "RatingID", "Name");
+            listMoviesVM.ratingID = ratingID;
+
+            return View(listMoviesVM);
         }
+
 
         public IActionResult Details(int id)
         {

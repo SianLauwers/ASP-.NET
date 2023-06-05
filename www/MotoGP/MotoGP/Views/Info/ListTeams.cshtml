@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MotoGP.Models.Team>
+
+@{
+    Layout = "~/views/shared/_Layout.cshtml";
+    ViewData["Title"] = "Teams";
+}
+
+<style>
+    * {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background-color: #eee;
+        margin-left: 25px;
+        margin-bottom: 25px;
+        padding: 15px;
+        flex-direction: column;
+        flex: 0 0 25%;
+    }
+
+    .card-img {
+        margin-left: 0px;
+    }
+
+    .card-body {
+        font-size: 16px;
+    }
+
+    .card-footer {
+        color: dimgrey;
+    }
+</style>
+
+<div>
+    @foreach (var team in Model )
+    {
+        var riders = (IEnumerable<Rider>)ViewData["Riders"];
+        <div class="card">
+            <img src="~/images/teams/@team.Logo" alt="Alternate text" />
+            <div>
+                <p class="card-body">@team.Name</p>
+                <br />
+                @foreach (var rider in riders)
+                {
+                    @if (team.TeamID == rider.TeamID)
+                    {
+                        <div>
+                            <p class="card-footer">@rider.FirstName @rider.LastName</p>
+                        </div>
+                    }
+
+                }
+
+            </div>
+        </div>
+    }
+
+</div>
+
+
+
+    <a asp-controller="Home" asp-action="Menu">back</a> |
+    <a asp-controller="Info" asp-action="ListTeamsRiders">Teams & Riders</a>

@@ -1,0 +1,61 @@
+﻿@model MotoGP.Models.Ticket
+
+@{
+    ViewData["Title"] = "Edit Ticket";
+}
+<form asp-action="EditTicket">
+    <input type="hidden" name="TicketID" value="@(Model.TicketID)" />
+    <input type="hidden" name="Name" value="@(Model.Name)" />
+    <input type="hidden" name="Email" value="@(Model.Email)" />
+    <input type="hidden" name="Address" value="@(Model.Address)" />
+    <input type="hidden" name="CountryID" value="@(Model.CountryID)" />
+    <input type="hidden" name="Country.Name" value="@(Model.Country.Name)" />
+    <input type="hidden" name="RaceID" value="@(Model.RaceID)" />
+    <input type="hidden" name="Race.Name" value="@(Model.Race.Name)" />
+    <input type="hidden" name="Number" value="@(Model.Number)" />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Country.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Race)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Race.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+        <dd>
+            <input type="checkbox" name="Paid" value="true" @(Model.Paid ? "checked" : "") /> Paid
+        </dd>
+        <dd>
+            <input type="submit" name="register" value="register" />
+        </dd>
+    </dl>
+</form>
+

@@ -26,6 +26,12 @@
         max-width: 200px;
         text-align: center;
     }
+
+    .bottom {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
 </style>
 
 <img class="banner" src="@imagePath" alt="Banner">
@@ -55,3 +61,7 @@
         </a>
     </div>
 </div>
+
+<footer class="bottom">
+    <a asp-controller="Shop" asp-action="ListTickets">admin tickets</a>
+</footer>
