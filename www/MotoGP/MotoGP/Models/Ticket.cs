@@ -10,8 +10,11 @@
         public int CountryID { get; set; }
         // FK Race
         public int RaceID { get; set; }
-        public string Number { get; set; }
+        public int Number { get; set; }
         public DateTime OrderDate { get; set; }
         public bool Paid { get; set; }
+
+        public ICollection<Rider> Riders { get; set; }
+        public ICollection<Race> Races { get; set; }
     }
 }
