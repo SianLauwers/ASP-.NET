@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MotoGP.Models.Rider>
+
+@{
+    Layout = "~/views/shared/_Layout.cshtml";
+    ViewData["Title"] = "Riders";
+    var jpg = ".jpg";
+    var png = ".png";
+}
+
+<style>
+    * {
+        padding: 5px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 790px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background-color: #eee;
+        padding: 15px;
+        flex-basis: calc(25% - 10px);
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .card-img {
+        margin: auto;
+        margin-left: 0px;
+    }
+
+    .card-body {
+        font-size: 28px;
+    }
+
+    .card-footer {
+        color: dimgrey;
+    }
+</style>
+
+<div class="card-container">
+    @foreach (var rider in Model)
+    {
+        <div class="card">
+            <img src="~/images/riders/@rider.Number@jpg" alt="Alternate text" />
+            <div>
+                <img class="card-img" src="~/images/flags/@rider.CountryID@png" alt="Alternate text" />
+                <p class="card-body">@rider.Number</p>
+            </div>
+
+            <p class="card-footer">@rider.FirstName @rider.LastName</p>
+        </div>
+    }
+</div>
+
+<a asp-controller="Home" asp-action="Menu">Back</a>

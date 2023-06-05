@@ -1,10 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MotoGP.Models;
+using MotoGP.Data;
 
 namespace MotoGP.Controllers
 {
     public class InfoController : Controller
     {
+        private readonly GPContext _context;
+
+        public InfoController(GPContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -12,24 +21,38 @@ namespace MotoGP.Controllers
 
         public IActionResult ListRaces()
         {
+            var race = _context.Races.OrderBy(r => r.Date);
+
             ViewData["BannerNr"] = 0;
 
-            return View();
+            return View(race.ToList());
         }
 
         public IActionResult BuildMap()
         {
-            var races = new List<Race>
-            {
-                new Race { RaceID = 1, X = 517, Y = 19, Name = "Assen" },
-                new Race { RaceID = 2, X = 859, Y = 249, Name = "Losail Circuit" },
-                new Race { RaceID = 3, X = 194, Y = 428, Name = "Autódromo Termas de Río Hondo" }
-            };
+            var race = _context.Races;
 
-            ViewData["Races"] = races;
             ViewData["BannerNr"] = 0;
 
-            return View();
+            return View(race);
+        }
+
+        public IActionResult ShowRace(int id)
+        {
+            var races = _context.Races.SingleOrDefault(r => r.RaceID == id);
+
+            ViewData["BannerNr"] = 0;
+
+            return View(races);
+        }
+
+        public IActionResult ListRiders()
+        {
+            var riders = _context.Riders.OrderBy(r => r.Number);
+
+            ViewData["BannerNr"] = 1;
+
+            return View(riders.ToList());
         }
     }
 }

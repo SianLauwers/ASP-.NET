@@ -1,0 +1,14 @@
+﻿@model MotoGP.Models.Race
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Race - " + Model.Name;
+    var jpg = ".jpg";
+}
+
+<h2>@Html.DisplayFor(model => model.Date) - @Html.DisplayFor(model => model.Country)</h2>
+
+<img src="~/images/races/@Html.DisplayFor(model => model.RaceID)@jpg" alt="Alternate Text" />
+
+<p>@Html.DisplayFor(model => model.Description)</p>
+<br />
+<a asp-controller="Info" asp-action="ListRaces">back</a>
