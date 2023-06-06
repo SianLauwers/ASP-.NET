@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/views/shared/_NewLayout.cshtml";
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <a asp-controller="Home" asp-action="Menu" ><img class="centered" src="~/images/banners/logo.png" alt="Alternate Text" /></a>
+</div>
+
+<style>
+    img {
+        max-width: 400px;
+    }
+    .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>

@@ -1,0 +1,45 @@
+﻿@model MotoGP.Models.ViewModel.SelectRaceViewModel
+
+@{
+    Layout = "~/views/shared/_Layout.cshtml";
+    ViewData["Title"] = "Races";
+    var jpg = ".jpg";
+}
+
+<style>
+    .card {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        flex: 0 0 30%;
+    }
+
+    
+</style>
+
+<form id="form" asp-controller="Info" asp-action="SelectRace" method="get">
+    <select id="select" asp-for="raceID" asp-items="Model.Races" onchange="this.form.submit()">
+        <option value="0">-- Select a race --</option>
+    </select>
+    
+</form> <br />
+
+        <div class="card">
+            <img src="~/images/races/@Html.DisplayFor(model => model.races[0].RaceID)@jpg" alt="Alternate Text" />
+        </div>
+
+            <p>@Html.DisplayFor(model => Model.races[0].Name) - @Html.DisplayFor(model => model.races[0].Country)</p>
+            <p>Length: @Html.DisplayFor(model => Model.races[0].Length) m</p>
+            <p>Date: @Html.DisplayFor(model => model.races[0].Date) </p>
+            <br />
+
+            <p>@Html.DisplayFor(model => model.races[0].Description)</p>
+        
+
+<a asp-controller="Info" asp-action="ListRaces">back</a>
+

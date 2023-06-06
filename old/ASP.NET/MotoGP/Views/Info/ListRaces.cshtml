@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MotoGP.Models.Race>
+
+@{
+    Layout = "~/views/shared/_Layout.cshtml";
+    ViewData["Title"] = "Races";
+}
+
+<h2>April</h2>
+
+@foreach (var race in Model)
+{
+    if (race.Date.Month == 4)
+    {
+        <p>@(Html.DisplayFor(modelItem => race.Date)) <a asp-controller="Info" asp-action="ShowRace" asp-route-id="@race.RaceID">@Html.DisplayFor(modelItem => race.Name)</a></p>
+
+    }
+}
+<h2>May</h2>
+@foreach (var race in Model)
+{
+    if (race.Date.Month == 5)
+    {
+        <p>@(Html.DisplayFor(modelItem => race.Date)) <a asp-controller="Info" asp-action="ShowRace" asp-route-id="@race.RaceID">@Html.DisplayFor(modelItem => race.Name)</a></p>
+
+    }
+}
+<h2>June</h2>
+@foreach (var race in Model)
+{
+    if (race.Date.Month == 6)
+    {
+        <p>@(Html.DisplayFor(modelItem => race.Date)) <a asp-controller="Info" asp-action="ShowRace" asp-route-id="@race.RaceID">@Html.DisplayFor(modelItem => race.Name)</a></p>
+
+    }
+}
+<h2>August</h2>
+@foreach (var race in Model)
+{
+    if (race.Date.Month == 8)
+    {
+        <p>@(Html.DisplayFor(modelItem => race.Date)) <a asp-controller="Info" asp-action="ShowRace" asp-route-id="@race.RaceID">@Html.DisplayFor(modelItem => race.Name)</a></p>
+
+    }
+}
+<h2>October</h2>
+@foreach (var race in Model)
+{
+    if (race.Date.Month == 10)
+    {
+        <p>@(Html.DisplayFor(modelItem => race.Date)) <a asp-controller="Info" asp-action="ShowRace" asp-route-id="@race.RaceID">@Html.DisplayFor(modelItem => race.Name)</a></p>
+
+    }
+}
+
+<p>
+    <a asp-controller="Home" asp-action="Menu">back</a> |
+    <a asp-controller="Info" asp-action="BuildMap">Races on map</a> |
+    <a asp-controller="Info" asp-action="SelectRace">One by one</a>
+</p>

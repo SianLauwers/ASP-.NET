@@ -1,0 +1,77 @@
+﻿@model MusicStore.Models.ViewModels.ListAlbumsViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<hr />
+<p>Filter on:</p>
+
+
+<form id="form" asp-controller="Albums" asp-action="Index" method="get">
+    <p>
+        <label asp-for="genreID">@Html.DisplayNameFor(model => model.genreID)</label>
+        <select id="select2" asp-for="genreID" asp-items="Model.Genres">
+
+            <option value="0">-- Select an genre --</option>
+        </select>
+    </p>
+    <label asp-for="artistID">@Html.DisplayNameFor(model => model.artistID)</label>
+    <select id="select" asp-for="artistID" asp-items="Model.Artists">
+        <option value="0">-- Select an artist --</option>
+    </select>
+    </p>
+    <p>
+        <input asp-for="title" />
+        <button type="submit">Filter</button>
+    </p>
+</form>
+<br />
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Albums[0].Artist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Albums[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Albums[0].Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Albums)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artist.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    
+                    <a asp-controller="ShoppingCart" asp-action="RemoveFromCart">Remove from cart</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
