@@ -1,0 +1,112 @@
+1. Apply migrations:
+	View -> Other Windows -> Package Manager Console
+
+	PM> Update-Database -Context SchoolContext
+	or
+	Try login -> apply migrations (faster)
+
+2. Create an admin/user:
+
+	Register
+
+3. Create an Administrator role & add the admin user to it:
+
+	SQL ->
+		dbo.AspNetUsers -> copy the id
+		dbo.AspNetRoles -> fill in id(1), Name(Administrator), NormalizedName(ADMINISTRATOR), ConcurrencyStamp(NULL)
+		dbo.AspNetUserRoles -> fill in UserId(copied id), RoleId(admin role id)
+
+4. Create an Admin Area:
+
+	Areas | Add Folder | Admin
+		- Controllers
+		- Views
+	Controllers | Add new MVC Controller - Empty
+	-> place [Area("Admin")] above the public class
+
+		-> 	namespace ContosoUniversity.Aread.Admin.Controllers
+			{
+				[Area("Admin")]
+				[Authorize(Roles = "Administrator")]
+				public class MaintainController : Controller
+				{
+					public IActionResult Index()
+					{
+						return View();
+					}
+				}
+			}
+
+5. Create an admin index view:
+
+	Views | Add New Folder | Maintain
+	Maintain | Razor View - Empty -> Index.cshtml
+
+	-> 	@{
+    			ViewData["Title"] = "Maintain Page";
+		}
+
+		<h2>@ViewData["Title"]</h2>
+
+		<h4>Admin panel</h4>
+
+6. Add a MapControllerRoute to program.cs:
+
+(Above the default MapControllerRoute) ->
+						app.MapControllerRoute(
+							name: "areaRoute",
+							pattern: "{area.exists}/{controller=Home}/{action=Index}/{id?}");
+
+7. Change title in _Layout.cshtml (Optional)
+
+8. Create new navigation to admin page in _Layout.cshtml:
+
+	<li class="nav-item">
+		<a class="nav-link text-dark" asp-area="Admin" asp-controller="Maintain" asp-action="Index"> Admin </a>
+	</li>
+
+9. Create layout for admin area:
+
+	_Layout.cshtml | Copy
+	Paste | _LayoutAdmin.cshtml 
+
+	-> add the needed changes for the admin's navigation
+
+		<li class="nav-item">
+                	<a class="nav-link text-dark" asp-area="Admin" asp-controller="Students" asp-action="Index">Students</a>
+                </li>
+		<li class="nav-item">
+              		<a class="nav-link text-dark" asp-area="Admin" asp-controller="Courses" asp-action="Index">Courses</a>
+        	</li>
+    		<li class="nav-item">
+    			<a class="nav-link text-dark" asp-area="Admin" asp-controller="Enrollments" asp-action="Index">Enrollments</a>
+               	</li>
+
+10. A default Admin pages layout:
+
+	Areas/Admin/Views/Razor View Start
+
+	->
+		@{
+			Layout = "/Views/Shared/_LayoutAdmin.cshtml";
+		}
+
+11. Import Tag helpers, ... in admin views:
+
+	Areas/Admin/Views/Razor View Imports
+
+	->
+		@using ContosoUniversity
+		@using ContosoUniversity.Models
+		@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+12. Program.cs change default Identity:
+
+	(Replace just above builder.Services.AddControllersWithViews();)
+
+	builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddRoleManager<RoleManager<IdentityRole>>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
