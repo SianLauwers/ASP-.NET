@@ -1,0 +1,18 @@
+1. Generate CRUD Controllers & Views:
+
+	Controllers | Add | New Scaffolded Item | MVC Controller with Views, using entity framework
+	Model class: model you want
+	Data Context class: Context file
+	Controller name: ...Controller
+	Add
+
+2. Move files:
+
+	Move controllers to Admin/Controllers folder
+	Move View folders to Admin/Views folder
+	Delete unneeded controller and/or views folders
+
+3. Add authorization and Admin-Area
+
+	[Area("Admin")]
+    	[Authorize(Roles = "Administrator")]
